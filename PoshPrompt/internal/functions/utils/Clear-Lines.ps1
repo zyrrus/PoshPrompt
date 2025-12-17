@@ -1,17 +1,13 @@
 ﻿function Clear-Lines {
     param([int]$LineCount)
     
-    $currentPos = $Host.UI.RawUI.CursorPosition
-    $linesToClear = [Math]::Min($LineCount, $currentPos.Y)
+    if ($LineCount -eq 0) { return }
     
-    for ($i = 0; $i -lt $linesToClear; $i++) {
-        $currentPos.Y--
-        $currentPos.X = 0
-        $Host.UI.RawUI.CursorPosition = $currentPos
-        
-        $width = $Host.UI.RawUI.BufferSize.Width
-        Write-Host (' ' * $width) -NoNewline
-        
-        $Host.UI.RawUI.CursorPosition = $currentPos
-    }
+    $esc = [char]0x1b
+    
+    # Build entire clear sequence as one string
+    $clearSequence = "$esc[1A$esc[2K" * $LineCount # Up + Clear line for each line
+    $clearSequence += "$esc[0G"  # Move to column 0
+    
+    return $clearSequence
 }
