@@ -68,6 +68,7 @@
         'Invoke-Text'
         'Invoke-Confirm'
         'Invoke-Select'
+        'Invoke-MultiSelect'
         'Invoke-Spinner'
     )
 
