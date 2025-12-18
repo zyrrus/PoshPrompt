@@ -14,7 +14,7 @@ PowerShell CLI input prompt library heavily inspired by [github.com/bombshell-de
 
 **New prompts/macros:**
 
-- [ ] Multiselect prompt
+- [x] Multiselect prompt
 - [ ] Password prompt
 - [ ] Logs (simple, styled text); Variants = info, success, step, warn, error, default
 - [ ] Tasks (execute multiple tasks with spinners)
