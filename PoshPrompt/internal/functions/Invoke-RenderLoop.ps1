@@ -7,6 +7,7 @@
 
     $state = $InitialState
     [Console]::CursorVisible = $false
+    [Console]::TreatControlCAsInput = $true
     $prevLineCount = 0
 
     try {
@@ -31,5 +32,6 @@
     }
     finally {
         [Console]::CursorVisible = $true
+        [Console]::TreatControlCAsInput = $false
     }
 }

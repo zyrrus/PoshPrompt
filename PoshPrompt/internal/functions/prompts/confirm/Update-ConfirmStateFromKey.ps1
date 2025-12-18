@@ -10,6 +10,11 @@
         'N' { $newState.Value = 'n'; $newState.Status = [PromptStatus]::Submitted }
         'Enter' { $newState.Status = [PromptStatus]::Submitted }
         'Escape' { $newState.Status = [PromptStatus]::Cancelled }
+        'C' { 
+            if ($Key.Modifiers -band [ConsoleModifiers]::Control) {
+                $newState.Status = [PromptStatus]::Cancelled
+            }
+        }
     }
 
     return $newState

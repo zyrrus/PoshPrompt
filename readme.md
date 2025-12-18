@@ -6,9 +6,9 @@ PowerShell CLI input prompt library heavily inspired by [github.com/bombshell-de
 
 ## Roadmap
 
-- [ ] Make the function verbs more consistent
+- [x] Allow `Ctrl+C` have the same exit behavior as `Esc` key.
 - [ ] Conform with the standard Get-Verb list (Render-... is not valid)
-- [ ] Allow `Ctrl+C` have the same exit behavior as `Esc` key.
+- [ ] Make the function verbs more consistent
 - [ ] Add docstrings to all public functions
 - [ ] Introduce a module prefix (ex: `<Verb>-Prompt<FunctionName>` => `Invoke-PromptIntro` or `Invoke-PromptConfirm`)
 

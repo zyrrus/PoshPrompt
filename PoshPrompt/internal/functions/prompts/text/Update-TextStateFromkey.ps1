@@ -9,6 +9,11 @@
 
     switch ($Key.Key) {
         'Escape' { $newState.Status = [PromptStatus]::Cancelled }
+        'C' { 
+            if ($Key.Modifiers -band [ConsoleModifiers]::Control) {
+                $newState.Status = [PromptStatus]::Cancelled
+            }
+        }
         'Enter' {
             if ($Validate) {
                 $err = & $Validate $newState.Value
